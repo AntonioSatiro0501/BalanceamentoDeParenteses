@@ -21,13 +21,13 @@ public class BalanceamentoParenteses{
     }
 
     public static boolean isBalanceada(String exp) throws Exception{
-        Pilha pilha = new Pilha();
+        PilhaGenerica<Character> pilha = new PilhaGenerica<Character>();
         char c;
 
         for (int i = 0; i < exp.length(); i++){
-            c = exp.charAT(i);
+            c = exp.charAt(i);
             if (c == '('){
-                pilha.push();
+                pilha.push(c);
             }
             else if (c == ')'){
                 if( pilha.isEmpty()){
